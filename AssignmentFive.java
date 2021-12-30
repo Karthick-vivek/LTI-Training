@@ -31,22 +31,31 @@ public class AssignmentFive {
 
 		String windowHandle = driver.getWindowHandle();
 		System.out.println(windowHandle);
+		
+		String currentWindow = driver.getTitle();
+		System.out.println("Current Window tile: "+ currentWindow);
 
 		driver.findElement(By.xpath("//img[contains(@src,'/cognizant-hs-tp-21sep2018.gif')]")).click();
 
 
 		Set<String> windowHandles = driver.getWindowHandles();
+		System.out.println(windowHandles);
+		
 		List<String> windowHandleList = new ArrayList<>(windowHandles);
 
 
 		driver.switchTo().window(windowHandleList.get(1));
-		System.out.println(driver.getTitle());		
+		System.out.println("Second window title: "+driver.getTitle());		
 
 		driver.switchTo().defaultContent();
 
 		driver.close();
-
+		
 		driver.quit();	
+		
+		System.out.println("***Run Successful***");
 	}
+	
+	
 
 }
