@@ -53,6 +53,7 @@ public class AssignmentThree {
 		driver.findElement(By.xpath("(//a[@class='dropdown-toggle'])[2]")).click();
 		
 		driver.findElement(By.cssSelector("a#logout_link")).click();
+		System.out.println("Logged out");
 
 		System.out.println("***Run Successful***");
 		driver.close();
