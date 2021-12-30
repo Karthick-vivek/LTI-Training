@@ -7,6 +7,7 @@ import java.util.Set;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 public class AssignmentFive {
 
@@ -34,6 +35,9 @@ public class AssignmentFive {
 		
 		String currentWindow = driver.getTitle();
 		System.out.println("Current Window tile: "+ currentWindow);
+		
+		Assert.assertEquals(currentWindow, "Jobs - Recruitment - Job Search - Employment -Job Vacancies - Naukri.com","The displayed title is not matching");
+
 
 		driver.findElement(By.xpath("//img[contains(@src,'/cognizant-hs-tp-21sep2018.gif')]")).click();
 
@@ -45,7 +49,10 @@ public class AssignmentFive {
 
 
 		driver.switchTo().window(windowHandleList.get(1));
-		System.out.println("Second window title: "+driver.getTitle());		
+		String title = driver.getTitle();
+		System.out.println("Second window title: "+title);
+		
+		Assert.assertEquals(title, "Cognizant Jobs - Career Opportunities in Cognizant - Naukri.com","The displayed title is not matching");
 
 		driver.switchTo().defaultContent();
 
