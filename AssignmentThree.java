@@ -4,6 +4,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 public class AssignmentThree {
 
@@ -43,16 +44,21 @@ public class AssignmentThree {
 		Thread.sleep(1000);
 
 		driver.findElement(By.id("purchase_cash")).click();
+		
 
 		Alert alert = driver.switchTo().alert();
 
-		System.out.println(alert.getText());
+		String text = alert.getText();
+		System.out.println(text);
+		
+		Assert.assertEquals(text,"Please, ensure that you have filled all the required fields with valid values.","Alert text is not matching");
 
 		alert.accept();
 
 		driver.findElement(By.xpath("(//a[@class='dropdown-toggle'])[2]")).click();
 		
 		driver.findElement(By.cssSelector("a#logout_link")).click();
+		
 		System.out.println("Logged out");
 
 		System.out.println("***Run Successful***");
