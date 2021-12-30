@@ -20,10 +20,9 @@ public class AssignmentFour {
 
 		System.out.println("Browser Launched");
 
-		Thread.sleep(3000);
-
 		driver.findElement(By.xpath("//button[text()='GOT IT']")).click();
-		Thread.sleep(7000);
+		Thread.sleep(10000);
+		
 		System.out.println("Handled cookies pop-up");
 
 		String text1 = driver.findElement(By.xpath("//p[@class='caption']")).getText();
